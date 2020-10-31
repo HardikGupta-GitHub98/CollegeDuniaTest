@@ -1,0 +1,7 @@
+.college-image {
+  height: 234px;
+  width: 100%;
+  background-image: url("../assets/College-Images/college_01.jpg");
+  background-size: cover;
+  opacity: 0.5;
+}
