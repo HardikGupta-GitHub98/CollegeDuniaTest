@@ -1,31 +1,53 @@
 <div id="heading" class="container-fluid">
-  <div class="row">
-    <h4>Colleges In North India</h4>
+  <div class="row single-row">
+    <div class="col-9">
+      <h3>Colleges In North India</h3>
+    </div>
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-6">
-      <div class="single-college">
-        <mat-card>
-          <div class="college-image"></div>
-          <div class="college-info col-12">
-            <h3 class="college-name">
+  <div class="row single-row">
+    <ng-container
+      class="single-college col-5"
+      *ngFor="let singleCollegeData of collegesData.colleges"
+    >
+      <mat-card>
+        <div class="college-image"></div>
+        <div class="college-info col-12 d-flex justify-content-centre">
+          <div class="col-8">
+            <h3 class="college-name m-0 p-0">
               {{ singleCollegeData.college_name }}
             </h3>
-            <h4 class="nearest-place">
+            <h4 class="nearest-place m-0 p-0">
               {{ singleCollegeData.nearest_place[0] }}|{{
                 singleCollegeData.nearest_place[1]
               }}
             </h4>
+            <p class="m-0 p-0">
+              {{ singleCollegeData.rating_remarks }}:|{{
+                singleCollegeData.famous_nearest_places
+              }}
+            </p>
+            <p class="m-0 p-0">{{ singleCollegeData.offertext }}</p>
           </div>
-        </mat-card>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="single-college">
-        <mat-card> owjnf </mat-card>
-      </div>
-    </div>
+          <div class="col-4">
+            <p class="original-fee m-0 p-0">
+              {{ singleCollegeData.original_fees }}
+              <span class="badge badge-secondary">{{
+                singleCollegeData.discount
+              }}</span>
+            </p>
+
+            <h3 class="m-0 p-0">{{ singleCollegeData.discounted_fees }}</h3>
+            <p class="m-0 p-0">{{ singleCollegeData.fees_cycle }}</p>
+            <ng-container *ngFor="let item of singleCollegeData.amenties">
+              <span style="color: rgb(7, 138, 94); font-size: 16px"
+                >{{ item }}.</span
+              >
+            </ng-container>
+          </div>
+        </div>
+      </mat-card>
+    </ng-container>
   </div>
 </div>

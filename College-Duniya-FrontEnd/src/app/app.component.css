@@ -4,4 +4,12 @@
   background-image: url("../assets/College-Images/college_01.jpg");
   background-size: cover;
   opacity: 0.5;
+  background-color: black;
+}
+.original-fee {
+  text-decoration: line-through;
+}
+.single-row {
+  display: flex;
+  justify-content: center;
 }
